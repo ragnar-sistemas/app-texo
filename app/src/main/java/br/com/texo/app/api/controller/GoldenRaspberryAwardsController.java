@@ -1,7 +1,5 @@
 package br.com.texo.app.api.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +18,7 @@ public class GoldenRaspberryAwardsController {
 	private GoldenRaspberryAwardsService service;
 
 	@GetMapping
-	public @ResponseBody List<GoldenRaspberryAwardsDTO> getGoldenRaspberryAwards() {
+	public @ResponseBody GoldenRaspberryAwardsDTO getGoldenRaspberryAwards() {
 		return service.getGoldenRaspberryAwards();
 	}
 

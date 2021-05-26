@@ -42,7 +42,7 @@ public class LeituraCSVService implements LeituraService {
 			reader = Files.newBufferedReader(Paths.get(caminhoDoCsv));
 			CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(LINHA_1_DA_PLANILHA).build();
 			for (String[] linhaDoArquivo : csvReader.readAll()) {
-				linhas.add(linha(juntaArrays(linhaDoArquivo).split("\\;", -1)));
+				linhas.add(linha(juntaArrays(linhaDoArquivo).split(";", -1)));
 			}
 		} catch (IOException e) {
 			throw new LeituraException("Houve um erro ao tentar ler o arquivo", e);
@@ -63,9 +63,10 @@ public class LeituraCSVService implements LeituraService {
 		StringBuilder juntos = new StringBuilder();
 		for (String[] array : arrays) {
 			for (String element : array) {
-				juntos.append(element);
+				juntos.append(element).append(",");
 			}
 		}
+		juntos.setLength(juntos.length() - 1);
 		return juntos.toString();
 	}
 

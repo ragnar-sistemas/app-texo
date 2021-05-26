@@ -24,5 +24,9 @@ public class EscreveProvider {
 	public void insere(List<GoldenRaspberryAwards> goldenRaspberryAwards) {
 		repository.saveAll(goldenRaspberryAwards);
 	}
+	
+	public void deleteAll() {
+		 repository.deleteAll();
+	}
 
 }

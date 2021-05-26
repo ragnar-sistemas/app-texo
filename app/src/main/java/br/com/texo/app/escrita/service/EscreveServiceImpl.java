@@ -26,6 +26,10 @@ public class EscreveServiceImpl implements EscreveService {
 	public void escreve(String arquivo) {
 		provider.insere(getGoldenRaspberryAwards(provider.getRows(arquivo)));
 	}
+	
+	public void deleteAll() {
+		provider.deleteAll();
+	}
 
 	private List<GoldenRaspberryAwards> getGoldenRaspberryAwards(List<Row> rows) {
 		List<GoldenRaspberryAwards> list = new LinkedList<>();

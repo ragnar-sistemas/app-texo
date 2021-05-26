@@ -3,36 +3,36 @@ package br.com.texo.app.api.controller.dto;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import br.com.texo.app.api.dto.IntervalDTO;
 
 public class GoldenRaspberryAwardsDTO {
-
-	private String type;
-	private List<IntervalDTO> intervals;
+	@JsonInclude(Include.NON_EMPTY)
+	private List<IntervalDTO> min;
+	@JsonInclude(Include.NON_EMPTY)
+	private List<IntervalDTO> max;
 
 	public GoldenRaspberryAwardsDTO() {
-		intervals = new LinkedList<>();
+		min = new LinkedList<IntervalDTO>();
+		max = new LinkedList<IntervalDTO>();
 	}
 
-	public String getType() {
-		return type;
+	public List<IntervalDTO> getMin() {
+		return min;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public List<IntervalDTO> getMax() {
+		return max;
 	}
 
-	public List<IntervalDTO> getIntervals() {
-		return intervals;
+	public void addMin(IntervalDTO min) {
+		this.min.add(min);
 	}
 
-	public void setIntervals(List<IntervalDTO> intervals) {
-		this.intervals = intervals;
-	}
-
-	@Override
-	public String toString() {
-		return "GoldenRaspberryAwardsDTO [type=" + type + ", intervals=" + intervals + "]";
+	public void addMax(IntervalDTO max) {
+		this.max.add(max);
 	}
 
 }

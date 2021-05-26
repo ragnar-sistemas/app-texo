@@ -7,4 +7,5 @@ public interface EscreveService {
 	
 	void escreve(String arquivo);
 
+	void deleteAll();
 }

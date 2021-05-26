@@ -17,6 +17,7 @@ public class Startup {
 
 	@EventListener(ContextRefreshedEvent.class)
 	public void contextRefreshedEvent() {
+		escreveService.deleteAll();
 		escreveService.escreve(CAMINHO_DO_CSV);
 	}
 

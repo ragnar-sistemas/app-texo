@@ -35,8 +35,8 @@ public class LeituraServiceTest {
 		Assert.assertFalse("Não deveria estar vazio", linhas.isEmpty());
 		Assert.assertThat(comparar(linhas), Matchers.containsInAnyOrder(new String[] {
 				"Row [year=1980, title=Can't Stop the Music, studios=Associated Film Distribution, producers=Allan Carr, winner=yes]",
-				"Row [year=1980, title=Cruising, studios=Lorimar Productions United Artists, producers=Jerry Weintraub, winner=]",
-				"Row [year=1980, title=The Formula, studios=MGM United Artists, producers=Steve Shagan, winner=]"
+				"Row [year=1980, title=Cruising, studios=Lorimar Productions, United Artists, producers=Jerry Weintraub, winner=]",
+				"Row [year=1980, title=The Formula, studios=MGM, United Artists, producers=Steve Shagan, winner=]" 
 				}));
 	}
 
